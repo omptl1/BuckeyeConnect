@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:cse3901-osu-2023au-910/teambob-finalproject.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
