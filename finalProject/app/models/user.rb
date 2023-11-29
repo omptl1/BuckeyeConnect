@@ -8,5 +8,6 @@ class User < ApplicationRecord
     validates :role, presence: true
     validates :email, presence: true, uniqueness: true
     validates :password, presence: true, length: { minimum: 8 }
+    # to-do: add password confirmation validation
     validates :password_confirmation, presence: true
 end

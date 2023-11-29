@@ -5,5 +5,5 @@ class Evaluation < ApplicationRecord
   validates :user_id, presence: true
   validates :score, presence: true
   validates :score, numericality: { only_integer: true }
-  validates :comment, presence: true
+  validates :comments, presence: true
 end
