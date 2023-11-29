@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :presentation_id, style: "display: block" %>
-    <%= form.text_field :presentation_id %>
+    <%= form.collection_select :presentation_id, Presentation.all, :id, :title, include_blank: true %>
   </div>
 
   <div>
