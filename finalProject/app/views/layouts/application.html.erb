@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title><%= yield(:title) %> | TeamBob</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,14 +11,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  
 
+  
   <body>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", '/static_pages/home' %></li>
-      <li><%= link_to "Evaluations",   '/evaluations' %></li>
-      <li><%= link_to "Presentations",   '/presentations' %></li>
-      <li><%= link_to "Users", '/users' %></li>
+  <div id="navbar">
+    <ul>
+      <li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li>
+      <li><button type="button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
+      <li><button type="button"><%= link_to "Presentations",   '/presentations' %></button></li>
+      <li><button type="button"><%= link_to "Users", '/users' %></button></li>
     </ul>
-    <%= yield %>
+  </div>
+    <%= yield %> 
   </body>
+  
 </html>
