@@ -1,2 +1,12 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+<div>
+  <h1>Welcome to TeamBobs Web App!</h1>
+
+  <h2>
+    This is the page for the
+    <a href="http://web.cse.ohio-state.edu/~joseph.97/courses/3901/labs/project6.html">final project</a>
+    .
+  </h2>
+
+  <%= link_to "Sign up now!", '/users/new', class: "btn btn-lg btn-primary" %>
+</div>

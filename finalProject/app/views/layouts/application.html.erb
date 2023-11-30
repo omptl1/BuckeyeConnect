@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title><%= yield(:title) %> | TeamBob</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,12 @@
   </head>
 
   <body>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Home", '/static_pages/home' %></li>
+      <li><%= link_to "Evaluations",   '/evaluations' %></li>
+      <li><%= link_to "Presentations",   '/presentations' %></li>
+      <li><%= link_to "Users", '/users' %></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
