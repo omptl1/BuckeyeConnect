@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  get 'static_pages/userview'
   resources :evaluations
   resources :presentations
   resources :users

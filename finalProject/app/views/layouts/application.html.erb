@@ -17,13 +17,17 @@
   <body>
   <div id="navbar">
     <ul>
-      <li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li>
+      <div id="removeAdmin"><li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li></div>
       <li><button type="button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
       <li><button type="button"><%= link_to "Presentations",   '/presentations' %></button></li>
       <li><button type="button"><%= link_to "Users", '/users' %></button></li>
+      <li><button type="button"><%= link_to "Sign Up!", '/users/new' %></button></li>
+      <li><button type="button"><%= link_to "User View", '/static_pages/userview' %></button></li>
     </ul>
   </div>
     <%= yield %> 
+    <script src="application.js"></script>
+    <input type="button" value="Remove Admin View" onclick="removeAdminView()" />
   </body>
   
 </html>
