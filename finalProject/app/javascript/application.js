@@ -4,5 +4,5 @@ import "controllers"
 
 function removeAdminView() {
     var elem = document.getElementById('removeAdmin');
-    elem.parentNode.removeChild(elem);
+    elem.removeChild(elem);
    }

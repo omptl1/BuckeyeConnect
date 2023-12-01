@@ -17,7 +17,7 @@
   <body>
   <div id="navbar">
     <ul>
-      <div id="removeAdmin"><li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li></div>
+      <li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li>
       <li><button type="button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
       <li><button type="button"><%= link_to "Presentations",   '/presentations' %></button></li>
       <li><button type="button"><%= link_to "Users", '/users' %></button></li>
@@ -26,8 +26,6 @@
     </ul>
   </div>
     <%= yield %> 
-    <script src="application.js"></script>
-    <input type="button" value="Remove Admin View" onclick="removeAdminView()" />
   </body>
   
 </html>
