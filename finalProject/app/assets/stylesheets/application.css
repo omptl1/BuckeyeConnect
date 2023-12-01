@@ -1,14 +1,37 @@
-#navbar {
-    background-color: rgb(255, 13, 0);
-    
-}
-
-#navbar ul {
+ul {
+    background-color: #b00c0cf3;
+    overflow: hidden;
     list-style-type: none;
     margin: 0;
-}
+    padding: 0;
+    border: 4px;
+    border-radius: 5px;
+ }
+ li {
+    float: right;
+ }
 
-#navbar li {
-    display: inline-block;
-    color: black;
-}
+.active-link {
+    background-color: #f53319;
+    color: white;
+ }
+
+ h2 {
+    position: relative;
+    float: center;
+ }
+
+.style-button {
+    background-color: rgb(186, 182, 182);
+    border: solid 2px;
+    border-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+ }
+
+ .home-page {
+    float: middle;
+    right: 50%;
+ }

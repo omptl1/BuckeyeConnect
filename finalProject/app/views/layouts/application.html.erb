@@ -17,12 +17,11 @@
   <body>
   <div id="navbar">
     <ul>
-      <li><button type="button"><%= link_to "Home", '/static_pages/home' %></button></li>
-      <li><button type="button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
-      <li><button type="button"><%= link_to "Presentations",   '/presentations' %></button></li>
-      <li><button type="button"><%= link_to "Users", '/users' %></button></li>
-      <li><button type="button"><%= link_to "Sign Up!", '/users/new' %></button></li>
-      <li><button type="button"><%= link_to "User View", '/static_pages/userview' %></button></li>
+      <li><button type="button" class="style-button"><%= link_to "Home", '/static_pages/home' %></button></li>
+      <li><button type="button" class="style-button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
+      <li><button type="button" class="style-button"><%= link_to "Presentations",   '/presentations' %></button></li>
+      <li><button type="button" class="style-button"><%= link_to "Users", '/users' %></button></li>
+      <li><button type="button" class="style-button"><%= link_to "Sign Up!", '/users/new' %></button></li>
     </ul>
   </div>
     <%= yield %> 
