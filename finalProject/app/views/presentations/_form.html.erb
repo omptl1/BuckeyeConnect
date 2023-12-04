@@ -2,7 +2,7 @@
   <% if presentation.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
-
+      # current_user.presentations == true
       <ul>
         <% presentation.errors.each do |error| %>
           <li><%= error.full_message %></li>
