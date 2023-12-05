@@ -5,17 +5,20 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/userview'
   
-  resources :presentations
   devise_scope :user do
     authenticated :user do
-      root to: 'presentations#index', as: :authenticated_root
+      root to: 'evaluations#index', as: :authenticated_root # Default for authenticated users
+      constraints lambda { |request| request.env['warden'].user.admin? } do
+        root to: 'presentations#index', as: :admin_authenticated_root
+      end
       get 'users/:id', to: 'users#show', as: :user
     end
+  
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
-      
+      root to: 'devise/sessions#new', as: :unauthenticated_root
     end
   end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   #root 'static_pages#home'
 end
