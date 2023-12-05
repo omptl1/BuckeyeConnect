@@ -21,7 +21,7 @@ class PresentationsController < ApplicationController
 
   # POST /presentations or /presentations.json
   def create
-    @presentation = Presentation.new(presentation_params)
+    @presentation = current_user.presentations.new(presentation_params)
 
     respond_to do |format|
       if @presentation.save
@@ -65,6 +65,6 @@ class PresentationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def presentation_params
-      params.require(:presentation).permit(:title, :description, :date,:user_id)
+      params.require(:presentation).permit(:title, :description, :date)
     end
 end
