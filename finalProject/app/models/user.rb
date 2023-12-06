@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :evaluations, dependent: :destroy
   has_many :evaluations, through: :presentations
   has_many :evaluations, through: :users
-  
+  validates :email, presence: true, uniqueness: true
 end
