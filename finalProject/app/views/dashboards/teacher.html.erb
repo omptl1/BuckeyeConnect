@@ -1,0 +1,17 @@
+<h1>Your Presentations and Evaluations</h1>
+
+<% if current_user.teacher? %>
+  <p>Welcome, Teacher!</p>
+<% elsif current_user.student? %>
+  <p>Welcome, Student!</p>
+<% else %>
+  <p>Welcome, User!</p>
+<% end %>
+
+<% @presentations.each do |presentation| %>
+  <p><%= presentation.title %></p>
+  <% presentation.evaluations.each do |evaluation| %>
+    <p>Score: <%= evaluation.score %>, Comments: <%= evaluation.comments %></p>
+    <!-- other evaluation details -->
+  <% end %>
+<% end %>

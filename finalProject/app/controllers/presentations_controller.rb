@@ -1,5 +1,9 @@
 class PresentationsController < ApplicationController
+
   before_action :set_presentation, only: %i[ show edit update destroy ]
+
+  # This will keep track of who the user is (teacher / student)
+  before_action :check_user_role, only: %i[student_dashboard teacher_dashboard]
 
   # GET /presentations or /presentations.json
   def index
@@ -57,6 +61,18 @@ class PresentationsController < ApplicationController
     end
   end
 
+  # GET /presentations/student_dashboard
+  def student_dashboard
+    # Logic for student dashboard
+    @presentations = current_user.presentations
+  end
+
+  # GET /presentations/teacher_dashboard
+  def teacher_dashboard
+    # Logic for teacher dashboard
+    @presentations = current_user.presentations.includes(:evaluations)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_presentation
@@ -67,4 +83,10 @@ class PresentationsController < ApplicationController
     def presentation_params
       params.require(:presentation).permit(:title, :description, :date)
     end
+  
+    # Check the user's role before accessing dashboards
+    def check_user_role
+      redirect_to root_path unless current_user.user_type.present?
+    end
+
 end

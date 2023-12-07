@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :evaluations, through: :presentations
   has_many :evaluations, through: :users
   validates :email, presence: true, uniqueness: true
+
+  enum user_type: { student: 0, teacher: 1 }
 end
