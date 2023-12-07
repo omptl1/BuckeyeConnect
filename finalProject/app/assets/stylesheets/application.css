@@ -2,7 +2,7 @@
     background-color: #b00c0cf3;
     overflow: hidden;
     list-style-type: none;
-    margin: 0;
+    margin: auto;
     padding: 0;
     border: 4px;
     border-radius: 5px;
@@ -19,4 +19,21 @@
     padding: 10px;
     font-size: 14px;
     text-decoration: none;
+ }
+
+ .rounded-box {
+   width: 320px;
+   height: 450px;
+   padding: 10px;
+   border-radius: 10px;
+   border: 5px solid gray;
+   margin: auto;
+   box-shadow: 5px 3px 3px black;
+ }
+
+ 
+
+ #centering {
+   text-align: center;
+   padding: 5px;
  }

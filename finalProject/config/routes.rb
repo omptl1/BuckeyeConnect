@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :evaluations
   resources :presentations
-  get 'static_pages/home'
-  get 'static_pages/userview'
   
   devise_scope :user do
     authenticated :user do
