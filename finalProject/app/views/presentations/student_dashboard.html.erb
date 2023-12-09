@@ -1,6 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/presentations/student_dashboard.html.erb -->
 
-<h1>Presentations</h1>
+Rails.logger.debug("Session Data: #{session.inspect}")
+
+
+<h1>My Presentations</h1>
 
 <div id="presentations">
   <% @presentations.each do |presentation| %>
@@ -12,4 +15,3 @@
   
 </div>
 
-<%= link_to "New presentation", new_presentation_path %>

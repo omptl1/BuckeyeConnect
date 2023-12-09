@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+  <%= form.label :user_email %>
+  <%= form.select :user_email, User.where.not(id: current_user.id).map { |user| [user.email, user.email] } %>
+  </div>
+
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>

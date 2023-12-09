@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_03_042914) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_09_044315) do
   create_table "evaluations", force: :cascade do |t|
     t.integer "presentation_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.integer "score"
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "evaluator_email"
+    t.string "presented_user_email"
     t.index ["presentation_id"], name: "index_evaluations_on_presentation_id"
     t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
@@ -29,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_042914) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_email"
     t.index ["user_id"], name: "index_presentations_on_user_id"
   end
 
