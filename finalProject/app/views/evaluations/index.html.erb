@@ -1,15 +1,41 @@
+<style>
+  .evaluation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
 
-<p style="color: green"><%= notice %></p>
+  .evaluation-table td, .evaluation-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
 
-<h1>Evaluations</h1>
+  .evaluation-table th {
+    background-color: #f2f2f2;
+  }
+</style>
 
-
-  <% @evaluations.each do |evaluation| %>
-    <%= render evaluation %>
-    <p>
-      <%= link_to "Show this evaluation", evaluation %>
-    </p>
-  <% end %>
-
-<%= link_to "New evaluation", new_evaluation_path %>
-
+<table class="evaluation-table">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Presentation Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @evaluations.each do |evaluation| %>
+      <tr>
+        <td><%= evaluation.presentation.user.full_name if evaluation.presentation && evaluation.presentation.user %></td>
+        <td><%= evaluation.presentation.title if evaluation.presentation %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p>
+            <%= link_to "Show this evaluation", evaluation %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

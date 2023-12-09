@@ -1,0 +1,11 @@
+<!-- app/views/presentations/upcoming_presentations.html.erb -->
+<h1>Upcoming Presentations</h1>
+
+<div id="presentations">
+  <% @upcoming_presentations.each do |presentation| %>
+    <%= render presentation %>
+    <p>
+      <%= link_to "Make an Evaluation", new_evaluation_path(presentation_id: presentation.id) %>
+    </p>
+  <% end %>
+</div>

@@ -1,18 +1,41 @@
+<!-- app/views/evaluations/_evaluation.html.erb -->
 
+<style>
+  .evaluation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
 
-<div id="<%= dom_id evaluation %>">
-  <p>
-    <strong>Presentation Selection:</strong>
-    <%= evaluation.presentation.title %>
-  </p>
-  <p>
-    <strong>Score:</strong>
-    <%= evaluation.score %>
-  </p>
+  .evaluation-table td, .evaluation-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
 
-  <p>
-    <strong>Comments:</strong>
-    <%= evaluation.comments %>
-  </p>
+  .evaluation-table th {
+    background-color: #f2f2f2;
+  }
+</style>
 
-</div>
+<table class="evaluation-table">
+  <tr>
+    <td><strong>Student Name:</strong></td>
+    <td><%= evaluation.presentation.user.full_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Presentation Title:</strong></td>
+    <td><%= evaluation.presentation.title %></td>
+  </tr>
+
+  <tr>
+  <td><strong>Score:</strong></td>
+  <td><%= evaluation.score %></td>
+  </tr>
+
+  <tr>
+  <td><strong>Comments:</strong></td>
+  <td><%= evaluation.comments %></td>
+  </tr>
+  <tr>
+</table>

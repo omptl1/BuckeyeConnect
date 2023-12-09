@@ -1,17 +1,12 @@
 <!-- app/views/presentations/student_dashboard.html.erb -->
 
-Rails.logger.debug("Session Data: #{session.inspect}")
-
-
 <h1>My Presentations</h1>
 
 <div id="presentations">
   <% @presentations.each do |presentation| %>
-    <%= render presentation %>
+    <%= render partial: 'presentation', locals: { presentation: presentation } %>
     <p>
       <%= link_to "Show this presentation", presentation %>
     </p>
   <% end %>
-  
 </div>
-
