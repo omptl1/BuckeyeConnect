@@ -1,22 +1,22 @@
 class PresentationsController < ApplicationController
-  # before_action :set_presentation, only: %i[ show edit update destroy ]
+  before_action :set_presentation, only: %i[ show edit update destroy ]
 
   # user_email = session[:user_email]
 
   # GET /presentations/student_dashboard
+  
+  def index
+    @presentations = Presentation.all
+  end
+
   def student_dashboard
     authenticate_user!
     @presentations = Presentation.where(user_email: current_user.email)
   end
 
   def show
-    # Find the presentation by title instead of ID
-    @presentation = Presentation.find_by(user_email: params[:id])
   end
 
-  def index
-    @presentations = Presentation.all
-  end
   
   def new
     @presentation = Presentation.new
@@ -80,16 +80,10 @@ class PresentationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions. (may be unnecessary)
-    # def set_presentation
-    #   @presentation = Presentation.find(params[:id])
-    # end
-
-    # Only allow a list of trusted parameters through.
     def presentation_params
       params.require(:presentation).permit(:title, :description, :date, :user_email)
     end
-    
-
-    attr_accessor :title, :description, :date, :user_email
+    def set_presentation
+      @presentation = Presentation.find_by(id: params[:id]) 
+    end 
 end

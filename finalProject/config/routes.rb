@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       root to: 'evaluations#index', as: :authenticated_root # Default for authenticated users
       constraints lambda { |request| request.env['warden'].user.admin? } do
         root to: 'presentations#index', as: :admin_authenticated_root
+          # For the student "my presentations" tab
+        resources :presentations do
+          collection do
+            get 'student_dashboard'
+          end
       end
       get 'users/:id', to: 'users#show', as: :user
     end
@@ -17,11 +22,8 @@ Rails.application.routes.draw do
     end
   end
   
-  # For the student "my presentations" tab
-  resources :presentations do
-    collection do
-      get 'student_dashboard'
-    end
+
+  
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

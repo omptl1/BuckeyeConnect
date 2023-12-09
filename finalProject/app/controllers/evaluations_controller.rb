@@ -22,7 +22,7 @@ class EvaluationsController < ApplicationController
   # POST /evaluations or /evaluations.json
   def create
     @evaluation = Evaluation.new(evaluation_params)
-
+    @evaluation.user = current_user
     respond_to do |format|
       if @evaluation.save
         format.html { redirect_to evaluation_url(@evaluation), notice: "Evaluation was successfully created." }
@@ -65,6 +65,6 @@ class EvaluationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def evaluation_params
-      params.require(:evaluation).permit(:presentation_id, :user_id, :score, :comments)
+      params.require(:evaluation).permit(:presentation_id, :score, :comments)
     end
 end
