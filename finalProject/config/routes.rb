@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'upcoming_presentations', to: 'presentations#upcoming_presentations'
       get '/presentations/new', to: 'presentations#new', as: 'schedule_presentation'
       get 'student_statistics', to: 'admin#student_statistics'
+      
 
     end
   
