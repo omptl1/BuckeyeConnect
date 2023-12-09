@@ -17,13 +17,18 @@
       <ul class="navigation">
           <% if user_signed_in? %>
             <%if current_user.admin%>
-              <li class="list"><button type="button" class="style-button"><%= link_to "Evaluations",   '/evaluations' %></button></li>
-              <li class="list"><button type="button" class="style-button"><%= link_to "Presentations",   '/presentations' %></button></li>
-              <li class="list"><button type="button" class="style-button"><%= link_to "Edit profile", edit_user_registration_path %></button></li>
+              <li class="list"><button type="button" class="style-button"><%= link_to "All Presentations",   '/presentations' %></button></li>
+              <li class="list"><button type="button" class="style-button"><%= link_to "Student Statistics", student_statistics_path %></button></li>
+
+              <li class="list"><button type="button" class="style-button"><%= link_to "Schedule a Presentation",  schedule_presentation_path %></button></li>
+              <li class="list"><button type="button" class="style-button"><%= link_to "Edit Admin Profile", edit_user_registration_path %></button></li>
               <li class="list"><button type="button" class="style-button"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button></li>
             <%else%>
               <li class="list"><button type="button" class="style-button"><%= link_to "My Presentations", student_dashboard_presentations_path %></button></li>
               <li class="list"><button type="button" class="style-button"><%= link_to "Submitted Evaluations",   '/evaluations' %></button></li>
+              <li class="list"><button type="button" class="style-button"><%= link_to "Upcoming Presentations",  upcoming_presentations_path %></button></li>
+
+
               <li class="list"><button type="button" class="style-button"><%= link_to "Edit profile", edit_user_registration_path %></button></li>          
               <li class="list"><button type="button" class="style-button"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button></li>
             <%end%>

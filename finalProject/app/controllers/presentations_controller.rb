@@ -1,5 +1,7 @@
 class PresentationsController < ApplicationController
   before_action :set_presentation, only: %i[ show edit update destroy ]
+  skip_before_action :set_presentation, only: [:student_dashboard]
+
 
   # user_email = session[:user_email]
 
@@ -11,12 +13,23 @@ class PresentationsController < ApplicationController
 
   def student_dashboard
     authenticate_user!
-    @presentations = Presentation.where(user_email: current_user.email)
+    @presentations = current_user.presentations
   end
 
   def show
+    if params[:id] == "student_dashboard"
+      student_dashboard
+      render :student_dashboard
+    else
+      @presentation = Presentation.find(params[:id])
+      @evaluations = @presentation.evaluations
+    end
   end
 
+  def upcoming_presentations
+    authenticate_user!
+    @upcoming_presentations = Presentation.where('date > ?', Time.now)
+  end
   
   def new
     @presentation = Presentation.new
@@ -83,7 +96,10 @@ class PresentationsController < ApplicationController
     def presentation_params
       params.require(:presentation).permit(:title, :description, :date, :user_email)
     end
+
     def set_presentation
-      @presentation = Presentation.find_by(id: params[:id]) 
+      if params[:id] != "student_dashboard"
+        @presentation = Presentation.find_by(id: params[:id])
+      end  
     end 
 end

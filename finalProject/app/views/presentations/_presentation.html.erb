@@ -1,22 +1,38 @@
-<div id="<%= dom_id presentation %>">
-  <p>
-  <strong>User assigned to:</strong>
-  <%= presentation.user_email %>
-  </p>
+<!-- app/views/presentations/_presentation.html.erb -->
 
-  <p>
-    <strong>Title:</strong>
-    <%= presentation.title %>
-  </p>
+<style>
+  .presentation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
 
-  <p>
-    <strong>Description:</strong>
-    <%= presentation.description %>
-  </p>
+  .presentation-table td, .presentation-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
 
-  <p>
-    <strong>Date:</strong>
-    <%= presentation.date %>
-  </p>
+  .presentation-table th {
+    background-color: #f2f2f2;
+  }
+</style>
 
-</div>
+<table class="presentation-table">
+  <tr>
+    <td><strong>Student Name:</strong></td>
+    <td><%= presentation.user.full_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Title:</strong></td>
+    <td><%= presentation.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= presentation.description %></td>
+  </tr>
+  <tr>
+    <td><strong>Date:</strong></td>
+    <td><%= presentation.date %></td>
+  </tr>
+</table>

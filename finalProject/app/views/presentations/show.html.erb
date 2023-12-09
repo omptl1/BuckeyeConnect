@@ -1,12 +1,59 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Presentations</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-<% if @presentation.present? %>
-  <%= render @presentation %>
-  <div>
-    <%= link_to "Edit this presentation", edit_presentation_path(@presentation) %> |
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2; /* Use a neutral color for header background */
+      }
+
+      /* Add any additional styles here */
+    </style>
+  </head>
+  <body>
+    <p style="color: green"><%= notice %></p>
+
+    <% if @presentation %>
+      <%= render @presentation %>
+      <h2>Evaluations Submitted for this Presentation:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @evaluations.each do |evaluation| %>
+            <tr>
+              <td><%= evaluation.score %></td>
+              <td><%= evaluation.comments %></td>    
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    <% else %>
+      <p>No presentation found.</p>
+    <% end %>
+
     <%= link_to "Back to presentations", presentations_path %>
-    <%= button_to "Destroy this presentation", @presentation, method: :delete %>
-  </div>
-<% else %>
-  <p>No presentation found.</p>
-<% end %>
+    <div>
+        <% if current_user.admin? %> <!-- Check if the user is an admin -->
+          <%= link_to "Edit this presentation", edit_presentation_path(@presentation) %>
+          <%= button_to "Destroy this presentation", @presentation, method: :delete %>
+        <% end %>
+      </div>
+  </body>
+</html>

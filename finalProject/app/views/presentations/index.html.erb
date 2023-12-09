@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Presentations</h1>
+<h1>All Presentations</h1>
 
 <div id="presentations">
   <% @presentations.each do |presentation| %>
@@ -9,7 +9,5 @@
       <%= link_to "Show this presentation", presentation %>
     </p>
   <% end %>
-  
-</div>
 
-<%= link_to "New presentation", new_presentation_path %>
+</div>
