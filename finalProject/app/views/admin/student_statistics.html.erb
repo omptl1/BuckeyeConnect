@@ -1,0 +1,60 @@
+<style>
+  <!-- Add your own styles here -->
+  body {
+    background-color: #f4f4f4;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+</style>
+
+<h1>Student Statistics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Average Score</th>
+      <th>Received Evaluations</th> <!-- Add this column header -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.full_name %></td>
+        <td><%= @average_scores[student.id].presence || 'N/A' %></td>
+        <td>
+          <!-- Iterate through received evaluations and display relevant information -->
+          <% student.received_evaluations.each do |evaluation| %>
+            Score: <%= evaluation.score %>, Comments: <%= evaluation.comments %><br>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

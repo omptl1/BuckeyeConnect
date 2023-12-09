@@ -32,13 +32,15 @@
           <tr>
             <th>Score</th>
             <th>Comments</th>
+            <th>Submitted by</th>
           </tr>
         </thead>
         <tbody>
           <% @evaluations.each do |evaluation| %>
             <tr>
               <td><%= evaluation.score %></td>
-              <td><%= evaluation.comments %></td>    
+              <td><%= evaluation.comments %></td> 
+              <td><%= evaluation.user.full_name %></td>
             </tr>
           <% end %>
         </tbody>

@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable, and :omniauthable
+
+  before_validation :set_default_role
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -18,5 +21,9 @@ class User < ApplicationRecord
     @average_scores = calculate_average_scores
   end
 
-  
+  private
+
+  def set_default_role
+    self.role ||= 0
+  end  
 end
