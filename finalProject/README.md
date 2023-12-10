@@ -13,7 +13,7 @@ Initial setup:
 # NOTICE!
 # if a user doesn't enter the correct field on the sign up page then they db rollback and prevent them from creating account
 # same as sign in if user doesn't enter correct field in the sign in they can't sign in.
-# make sure use admin@example.com for email and password to log in as admin
+# make sure use admin@example.com for email and "password" for the password to log in as admin.
 
 Steps to start the website are below. Please execute them in order:
 1. run "bundle install" to install all dependencies. 
