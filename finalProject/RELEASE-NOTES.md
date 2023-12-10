@@ -1,3 +1,5 @@
+# Release Notes
+
 So there were a handful of changes made from the demo we presnted on and the final version we submited.
 
 1. Added a filter bar that can sort through current presenations based on an entered date.
