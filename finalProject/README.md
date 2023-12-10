@@ -22,7 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# use rails db:migrate first then run rails db:seed
 
+# notice!
 # if user doesn't enter the correct field in the sign up then they db rollback and prevent them from creating account
 # same as sign in if user doesn't enter correct field in the sign in they can't sign in.
 # make sure use admin@example.com for email and password to log in as admin
