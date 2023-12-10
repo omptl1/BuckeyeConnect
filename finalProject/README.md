@@ -1,4 +1,4 @@
-# README
+# README - FINAL VERSION
 
 Initial setup:
 - Rails version 7.0.8 needs to be installed.
@@ -7,7 +7,7 @@ Initial setup:
 
 * Database initialization
 
-- To initialize the database please enter "rails db:migrate" into the command line.
+- To initialize the database please enter "rails db:migrate" into the command prompt.
 - Then enter "rails db:seed" in order to seed the database with the admin login.
 
 # NOTICE!
