@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 # Release Notes
 
 So there were a handful of changes made from the demo we presnted on and the final version we submited.
+=======
+So there were a handful of changes made from the demo we presented on and the final version we submitted.
+>>>>>>> 20aa1bc (readme goodness)
 
-1. Added a filter bar that can sort through current presenations based on an entered date.
+1. Added a filter bar that can sort through current presenations based on the entered date.
 
 2. A proper user login page was created to be used after an account was created.
 
