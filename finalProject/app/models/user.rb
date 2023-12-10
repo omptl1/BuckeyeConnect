@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def student_statistics
-    @students = User.where(role: '0') # Assuming '0' represents students
+    @students = User.where(role: '0') 
     @average_scores = calculate_average_scores
   end
 

@@ -2,7 +2,6 @@
   <% if presentation.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
-      # current_user.presentations == true
       #for creating a new presentation from admin view
       <ul>
         <% presentation.errors.each do |error| %>

@@ -1,3 +1,5 @@
+
+// filtering on presentations page to 
 document.addEventListener('DOMContentLoaded', function() {
     var filterInput = document.getElementById('presentationFilter');
     var presentationsContainer = document.getElementById('presentations');
@@ -7,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
       presentationsContainer.querySelectorAll('.presentation-table').forEach(function(presentationTable) {
         var presentationDateElement = presentationTable.querySelector('.presentation-date');
-        var presentationLink = presentationTable.nextElementSibling; // Assuming the link is a sibling element
+        var presentationLink = presentationTable.nextElementSibling;
   
         if (presentationDateElement) {
           var presentationDate = presentationDateElement.nextElementSibling.textContent.toLowerCase();
   
-          // Show or hide the presentation based on the filter
+          // shows or hides presentations depending on date
           var displayStyle = presentationDate.includes(filterValue) ? 'table' : 'none';
           presentationTable.style.display = displayStyle;
           presentationLink.style.display = displayStyle === 'none' ? 'none' : 'block';
