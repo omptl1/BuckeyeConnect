@@ -10,6 +10,6 @@ So there were a handful of changes made from the demo we presnted on and the fin
 
 5. Better organized the evaluations page, so the user can see all of their current evaluations.
 
-6. Added the ability for a user to change their password after cretaing an account.
+6. Added the ability for a user to change their password after creating an account.
 
-7. 
+7. Added a statistics feature for the admin view, that shows a general score based off the submitted student score in evaluations for a given user  
