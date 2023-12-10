@@ -6,7 +6,8 @@ class PresentationsController < ApplicationController
   # user_email = session[:user_email]
 
   # GET /presentations/student_dashboard
-  
+
+
   def index
     @presentations = Presentation.all
   end

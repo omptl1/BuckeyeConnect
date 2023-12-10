@@ -7,14 +7,12 @@
     <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   
   <body>
     <div id="navbar">
-
       <ul class="navigation">
           <% if user_signed_in? %>
             <%if current_user.admin%>
