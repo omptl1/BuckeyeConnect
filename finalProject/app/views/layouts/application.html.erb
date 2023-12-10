@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <script src="finalProject/app/javascript/application.js" defer></script>
+    <script src="<%= asset_path 'application.js' %>" defer></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
